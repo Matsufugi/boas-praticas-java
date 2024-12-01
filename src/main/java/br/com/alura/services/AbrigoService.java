@@ -20,7 +20,7 @@ public class AbrigoService {
     public void ListarAbrigos() throws Exception, InterruptedException{
 
         HttpClient client = HttpClient.newHttpClient();
-        // URL da API
+        // URL da APIs
         String uri = "http://localhost:8080/abrigos";
         HttpResponse<String> response = dispararGet(client, uri);
         String responseBody = response.body();
