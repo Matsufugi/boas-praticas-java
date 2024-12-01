@@ -12,9 +12,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
-import static br.com.alura.AdopetConsoleApplication.dispararGet;
-import static br.com.alura.AdopetConsoleApplication.dispararPost;
-
 public class AbrigoService {
 
     public void ListarAbrigos() throws Exception, InterruptedException{
@@ -67,7 +64,7 @@ public class AbrigoService {
 
     }
 
-    private static HttpResponse<String> dispararGet(HttpClient client, String uri) throws  IOException, InterruptedException{
+    private HttpResponse<String> dispararGet(HttpClient client, String uri) throws  IOException, InterruptedException{
 
         //Conexão com a API executando o mét.odo GET restornando um HTTPRESPONSE<STRING>
         HttpRequest request = HttpRequest.newBuilder()
@@ -78,7 +75,7 @@ public class AbrigoService {
 
     }
 
-    private static HttpResponse<String> dispararPost(HttpClient client, String uri, JsonObject json) throws IOException, InterruptedException{
+    private HttpResponse<String> dispararPost(HttpClient client, String uri, JsonObject json) throws IOException, InterruptedException{
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(uri))
                 .header("Content-Type", "application/json")
